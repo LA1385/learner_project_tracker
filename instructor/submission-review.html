@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submission Review | Learner Project Tracker</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Learner Project Tracker</h1>
+  </header>
+
+  <div class="layout">
+    <main class="content">
+      <p class="back-link"><a href="review-queue.html">&larr; Back to review queue</a></p>
+
+      <h2>Submission Review</h2>
+
+      <section class="card" aria-labelledby="submission-heading">
+        <h3 id="submission-heading">Submission</h3>
+        <dl>
+          <dt>Learner</dt>
+          <dd>Learner 1</dd>
+          <dt>Day</dt>
+          <dd>Day 3</dd>
+          <dt>Submitted link</dt>
+          <dd><a href="https://example.com/day-3-link">https://example.com/day-3-link</a></dd>
+        </dl>
+      </section>
+
+      <section class="card" aria-labelledby="requirements-heading">
+        <h3 id="requirements-heading">Day 3 requirements</h3>
+        <p>Submit a link to your project work for today. Include a one-sentence description of what you did.</p>
+      </section>
+
+      <section class="card" aria-labelledby="feedback-heading">
+        <h3 id="feedback-heading">Feedback</h3>
+        <form>
+          <div class="field">
+            <label for="feedback">Write feedback for this learner</label>
+            <textarea id="feedback" name="feedback" rows="6" required></textarea>
+          </div>
+          <button type="submit" class="btn">Save feedback</button>
+        </form>
+      </section>
+    </main>
+
+    <nav class="site-nav" aria-label="Instructor navigation">
+      <ul>
+        <li><a href="review-queue.html">Review Queue</a></li>
+        <li><a href="overview.html">Overview</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Learner Project Tracker</p>
+  </footer>
+</body>
+</html>
