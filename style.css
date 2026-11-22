@@ -1,0 +1,298 @@
+/* ==========================================================
+   Learner Project Tracker - basic stylesheet
+   Concepts used: box model, selectors, Flexbox, Grid,
+   and one media query for narrow screens.
+   ========================================================== */
+
+/* ---------- Colours (taken from the TechDojo palette) ---------- */
+:root {
+  --bg: #140f0d;
+  --surface: #221c19;
+  --field: #2b2420;
+  --border: #3d332d;
+  --text: #f4ede2;
+  --muted: #b9ada0;
+  --accent: #e8452c;   /* orange-red */
+  --gold: #e3a93a;
+  --green: #6dd3a0;
+}
+
+/* ---------- Box model + base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;  /* padding and border stay inside the set width */
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--bg);
+
+  /* Flexbox: stack header, layout and footer, footer stays at the bottom */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.15rem; color: var(--gold); }
+
+p { margin: 0 0 1rem; }
+
+a { color: var(--gold); }
+a:hover { color: var(--text); }
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  padding: 1rem 1.5rem;
+  background-color: var(--surface);
+  border-bottom: 3px solid var(--accent);
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+/* ---------- Page layout: navigation + main content (Flexbox) ---------- */
+.layout {
+  flex: 1;                 /* fills the space between header and footer */
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  flex: 1;                 /* main content takes the remaining width */
+  padding: 1.5rem;
+  max-width: 60rem;
+}
+
+/* Navigation: a sidebar on wide screens (moved before main with order) */
+.site-nav {
+  order: -1;
+  width: 12rem;
+  padding: 1.5rem 1rem;
+  background-color: var(--surface);
+  border-right: 1px solid var(--border);
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.site-nav a {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  background-color: var(--field);
+}
+
+.site-nav a[aria-current="page"] {
+  background-color: var(--field);
+  color: var(--gold);
+  font-weight: 700;
+  border-left: 4px solid var(--accent);
+}
+
+/* ---------- Cards, lists and grid ---------- */
+.card {
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.card h3 { margin-top: 0; }
+
+/* Grid: overview cards sit in as many columns as fit */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+
+.card-grid .card { margin-bottom: 0; }
+
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry-list li {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.entry-list summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.entry-list details p { margin: 0.5rem 0 0; }
+
+.back-link { margin-bottom: 1rem; }
+
+/* ---------- Forms ---------- */
+.field { margin-bottom: 1rem; }
+
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  color: var(--text);
+  background-color: var(--field);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.btn {
+  padding: 0.65rem 1.5rem;
+  font: inherit;
+  font-weight: 700;
+  color: var(--bg);
+  background-color: var(--accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn:hover { background-color: var(--gold); }
+
+/* Login page (id selector) */
+#login-form {
+  padding: 1.25rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.login {
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 26rem;
+}
+
+.message { min-height: 1.5rem; margin: 0 0 1rem; font-weight: 600; }
+.message.error { color: var(--accent); }
+.message.success { color: var(--green); }
+
+/* ---------- Tables ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+caption {
+  padding-bottom: 0.5rem;
+  text-align: left;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+th,
+td {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+}
+
+tbody th { text-align: left; }
+
+td.yes { color: var(--green); font-weight: 700; }
+td.no  { color: var(--accent); font-weight: 700; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+.site-footer p { margin: 0; }
+
+/* ==========================================================
+   Narrow screens: navigation becomes a bottom bar
+   ========================================================== */
+@media (max-width: 700px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .site-nav {
+    order: 0;              /* back to source order: after main */
+    width: 100%;
+    padding: 0.5rem;
+    border-right: none;
+    border-top: 1px solid var(--border);
+    position: sticky;
+    bottom: 0;
+  }
+
+  .site-nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .site-nav a {
+    text-align: center;
+  }
+
+  .site-nav a[aria-current="page"] {
+    border-left: none;
+    border-bottom: 3px solid var(--accent);
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

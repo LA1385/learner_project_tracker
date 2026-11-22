@@ -4,66 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Overview | Learner Project Tracker</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <h1>Learner Project Tracker</h1>
   </header>
 
-  <main>
-    <h2>Overview</h2>
+  <div class="layout">
+    <main class="content">
+      <h2>Overview</h2>
 
-    <section aria-labelledby="l1">
-      <h3 id="l1">Learner 1</h3>
-      <table>
-        <caption>Learner 1 - this week</caption>
-        <thead>
-          <tr><th scope="col">Day</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th></tr>
-        </thead>
-        <tbody>
-        <tr><th scope="row">Submitted</th><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
-        <tr><th scope="row">Reviewed</th><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
-        </tbody>
-      </table>
-    </section>
+      <div class="card-grid">
+        <section class="card" aria-labelledby="l1">
+          <h3 id="l1">Learner 1</h3>
+          <table>
+            <caption>Learner 1 - this week</caption>
+            <thead>
+              <tr><th scope="col">Day</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th></tr>
+            </thead>
+            <tbody>
+            <tr><th scope="row">Submitted</th><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td></tr>
+            <tr><th scope="row">Reviewed</th><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
+            </tbody>
+          </table>
+        </section>
 
-    <section aria-labelledby="l2">
-      <h3 id="l2">Learner 2</h3>
-      <table>
-        <caption>Learner 2 - this week</caption>
-        <thead>
-          <tr><th scope="col">Day</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th></tr>
-        </thead>
-        <tbody>
-        <tr><th scope="row">Submitted</th><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
-        <tr><th scope="row">Reviewed</th><td>Yes</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
-        </tbody>
-      </table>
-    </section>
+        <section class="card" aria-labelledby="l2">
+          <h3 id="l2">Learner 2</h3>
+          <table>
+            <caption>Learner 2 - this week</caption>
+            <thead>
+              <tr><th scope="col">Day</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th></tr>
+            </thead>
+            <tbody>
+            <tr><th scope="row">Submitted</th><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
+            <tr><th scope="row">Reviewed</th><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
+            </tbody>
+          </table>
+        </section>
 
-    <section aria-labelledby="l3">
-      <h3 id="l3">Learner 3</h3>
-      <table>
-        <caption>Learner 3 - this week</caption>
-        <thead>
-          <tr><th scope="col">Day</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th></tr>
-        </thead>
-        <tbody>
-        <tr><th scope="row">Submitted</th><td>Yes</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
-        <tr><th scope="row">Reviewed</th><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
+        <section class="card" aria-labelledby="l3">
+          <h3 id="l3">Learner 3</h3>
+          <table>
+            <caption>Learner 3 - this week</caption>
+            <thead>
+              <tr><th scope="col">Day</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th></tr>
+            </thead>
+            <tbody>
+            <tr><th scope="row">Submitted</th><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
+            <tr><th scope="row">Reviewed</th><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </main>
 
-  <nav aria-label="Instructor navigation">
-    <ul>
-      <li><a href="review-queue.html">Review Queue</a></li>
-      <li><a href="overview.html" aria-current="page">Overview</a></li>
-    </ul>
-  </nav>
+    <nav class="site-nav" aria-label="Instructor navigation">
+      <ul>
+        <li><a href="review-queue.html">Review Queue</a></li>
+        <li><a href="overview.html" aria-current="page">Overview</a></li>
+      </ul>
+    </nav>
+  </div>
 
-  <footer>
+  <footer class="site-footer">
     <p>&copy; 2026 Learner Project Tracker</p>
   </footer>
 </body>
