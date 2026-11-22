@@ -13,6 +13,6 @@ form.addEventListener("submit", function (event) {
     message.textContent = "Please fill in both fields.";
     message.className = "message error";
   } else {
-    location.href = "/learner/myactivity.html";
+    location.href = "learner/myactivity.html";
   }
 });
