@@ -146,6 +146,17 @@ summary:focus-visible {
 
 .card-grid .card { margin-bottom: 0; }
 
+.risk-badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.5rem;
+  color: #fff;
+  background-color: #8b241a;
+  border-radius: 999px;
+  font-size: 0.85em;
+  font-weight: 700;
+}
+
 .entry-list {
   list-style: none;
   margin: 0;
