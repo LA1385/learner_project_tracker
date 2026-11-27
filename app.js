@@ -1,7 +1,10 @@
-import { learners } from './data.js';
 import { login } from './login.js';
 
 login();
+
+// Async function that fetches learners data
+
+/* Show all four states for the learner list: loading, empty (test it with an empty array in the file), success and error (test it with a wrong file name), with a "Try again" button on the error. */
 
 function renderLearners(container, learnerList) {
     const entries = learnerList.map((learner) => {
@@ -27,3 +30,5 @@ const reviewedSubmissionContainer = document.querySelector('.entry-list-reviewed
 if (reviewedSubmissionContainer) {
     renderLearners(reviewedSubmissionContainer, learners.slice(4, 8));
 }
+
+

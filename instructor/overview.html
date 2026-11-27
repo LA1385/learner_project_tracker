@@ -14,7 +14,33 @@
   <div class="layout">
     <main class="content">
       <h2>Overview</h2>
+      <form id="learner-form" novalidate>
+        <h3>Register a learner</h3>
 
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" required
+            pattern="[\p{L}\p{M}'’ \-]{2,}" aria-describedby="name-error">
+          <p class="error" id="name-error"></p>
+        </div>
+
+        <div>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" required
+           pattern="0[789][01]\d{8}" aria-describedby="phone-error">
+          <p class="error" id="phone-error"></p>
+        </div>
+
+        <div>
+          <label for="cohort">Cohort</label>
+          <input type="text" id="cohort" required
+            pattern="[A-Za-z0-9 \-]{2,20}" aria-describedby="cohort-error">
+          <p class="error" id="cohort-error"></p>
+        </div>
+
+        <p id="form-success" role="status"></p>
+        <button type="submit">Register learner</button>
+      </form>
       <div class="card-grid"></div>
     </main>
 
