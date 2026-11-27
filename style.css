@@ -50,7 +50,10 @@ h3 { font-size: 1.15rem; color: var(--gold); }
 
 p { margin: 0 0 1rem; }
 
-a { color: var(--gold); }
+a {
+  color: var(--gold);
+  overflow-wrap: anywhere;
+}
 a:hover { color: var(--text); }
 
 /* Visible keyboard focus */
@@ -87,6 +90,7 @@ summary:focus-visible {
   flex: 1;                 /* main content takes the remaining width */
   padding: 1.5rem;
   max-width: 60rem;
+  min-width: 0;
 }
 
 /* Navigation: a sidebar on wide screens (moved before main with order) */
@@ -133,6 +137,7 @@ summary:focus-visible {
   background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
+  min-width: 0;
 }
 
 .card h3 { margin-top: 0; }
@@ -254,6 +259,15 @@ td {
 
 tbody th { text-align: left; }
 
+.weekly-table {
+  table-layout: fixed;
+}
+
+.weekly-table th:first-child,
+.weekly-table td:first-child {
+  width: 25%;
+}
+
 td.yes { color: var(--green); font-weight: 700; }
 td.no  { color: var(--accent); font-weight: 700; }
 
@@ -275,6 +289,14 @@ td.no  { color: var(--accent); font-weight: 700; }
     flex-direction: column;
   }
 
+  .site-header {
+    padding: 0.875rem 1rem;
+  }
+
+  .site-header h1 {
+    font-size: 1.15rem;
+  }
+
   .content {
     padding: 1rem;
   }
@@ -292,10 +314,17 @@ td.no  { color: var(--accent); font-weight: 700; }
   .site-nav ul {
     flex-direction: row;
     justify-content: space-around;
+    gap: 0.25rem;
+  }
+
+  .site-nav li {
+    flex: 1 1 0;
+    min-width: 0;
   }
 
   .site-nav a {
     text-align: center;
+    padding: 0.6rem 0.25rem;
   }
 
   .site-nav a[aria-current="page"] {
@@ -305,5 +334,14 @@ td.no  { color: var(--accent); font-weight: 700; }
 
   .card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .weekly-table {
+    font-size: 0.8rem;
+  }
+
+  .weekly-table th,
+  .weekly-table td {
+    padding: 0.35rem 0.15rem;
   }
 }
